@@ -11,8 +11,8 @@ export class CreateUserComponent implements OnInit {
 
   user: User = {
     name: "Chico",
+    password: "password",
     email: "elis@regina.com",
-    age: 45,
     address: [
       {
         rua: "maria maria",

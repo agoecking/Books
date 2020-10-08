@@ -1,7 +1,10 @@
 ###
 
-GET http://localhost:1234/listUser
+GET http://localhost:1234/book
 
+###
+
+GET http://localhost:1234/searchByGenre/drama
 ###
 
 GET http://localhost:1234/chico@buarque.com
@@ -21,4 +24,18 @@ content-type: application/json
         "cep": 1234567,
         "numero": 123
     }]
+}
+
+###
+
+
+POST http://localhost:1234/registerBook
+content-type: application/json 
+
+{
+    "bookName": "essa gente",
+    "author": "buarque",
+    "publisher": "cia das letras",
+    "genre": "drama",
+    "status": "disponivel"
 }

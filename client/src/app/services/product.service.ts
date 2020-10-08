@@ -17,6 +17,6 @@ export class ProductService {
   }
 
   create(product: Product): Observable<Product> {
-    return this.http.post<Product>(this.baseURL, product);
+    return this.http.post<Product>(this.baseURL+'/registerBook', product);
   }
 }

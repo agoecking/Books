@@ -17,12 +17,12 @@ export class ListUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.list().subscribe((list) => {
-      console.log(list);
       this.users = list;
+      console.log(list);
     });
   }
 
   navigateToCreateUser(): void {
-    this.router.navigate(["user/create"]);
+    this.router.navigate(["user/registerUser"]);
   }
 }

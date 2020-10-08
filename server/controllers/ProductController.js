@@ -12,7 +12,7 @@ class ProductController {
 
   async getByName(req, res) {
     try {
-      var result = await product.find({ 'bookName': req.params.bookName });
+      var result = await product.find({ bookName: req.params.bookName });
       res.status(200).json(result);
     } catch (error) {
       res.status(500).json(error);
@@ -21,7 +21,7 @@ class ProductController {
 
   async getByAuthor(req, res) {
     try {
-      var result = await product.find({ 'author': req.params.author });
+      var result = await product.find({ author: req.params.author });
       res.status(200).json(result);
     } catch (error) {
       res.status(500).json(error);
@@ -30,17 +30,21 @@ class ProductController {
 
   async getByGenre(req, res) {
     try {
-      var result = await product.find({ 'genre': req.params.genre });
+      var result = await product.find({ genre: req.params.genre });
       res.status(200).json(result);
     } catch (error) {
       res.status(500).json(error);
     }
   }
 
-  async getBooks(req, res) {
-    var result = await product.find({});
-    console.log(result);
-    res.status(200).json(result);
+  async get(req, res) {
+    try {
+      var result = await product.find({});
+      console.log(result);
+      res.status(200).json(result);
+    } catch (error) {
+      res.status(500).json(error);
+    }
   }
 }
 

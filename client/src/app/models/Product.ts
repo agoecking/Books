@@ -5,4 +5,5 @@ export class Product {
   genre: string;
   publisher: string;
   status: string;
+  createdAt?: Date;
 }

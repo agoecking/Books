@@ -21,6 +21,6 @@ export class ListBookComponent implements OnInit {
     });
   }
   navigateToCreateProduct(): void {
-    this.router.navigate(['product/create']);
+    this.router.navigate(['product/registerBook']);
   }
 }

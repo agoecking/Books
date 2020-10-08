@@ -13,7 +13,7 @@ const routes: Routes = [
     component: ListUserComponent,
   },
   {
-    path: 'user/create',
+    path: 'user/registerUser',
     component: CreateUserComponent,
   },
 
@@ -22,7 +22,7 @@ const routes: Routes = [
     component: ListBookComponent,
   },
   {
-    path: 'book/create',
+    path: 'product/registerBook',
     component: CreateBookComponent,
   }
 ];
