@@ -1,0 +1,24 @@
+###
+
+GET http://localhost:1234/listUser
+
+###
+
+GET http://localhost:1234/chico@buarque.com
+
+###
+
+POST http://localhost:1234/registerUser
+content-type: application/json 
+
+{
+    "name": "chico",
+    "password": "pass",
+    "email": "chico@buarque.com",
+    "address": [{
+        "rua": "chico",
+        "bairro": "maria",
+        "cep": 1234567,
+        "numero": 123
+    }]
+}
