@@ -1,9 +1,41 @@
-<label>Teste</label>
+<label>Name</label>
 <input 
     type="text" 
     placeholder="Teste"
-    bookName="bookName"
+    name="bookName"
     [(ngModel)]="product.bookName"
+/>
+<p></p>
+<label>Author</label>
+<input 
+    type="text" 
+    placeholder="Teste"
+    name="author"
+    [(ngModel)]="product.author"
+/>
+<p></p>
+<label>Genre</label>
+<input 
+    type="text" 
+    placeholder="Teste"
+    name="genre"
+    [(ngModel)]="product.genre"
+/>
+<p></p>
+<label>Publisher</label>
+<input 
+    type="text" 
+    placeholder="Teste"
+    name="publisher"
+    [(ngModel)]="product.publisher"
+/>
+<p></p>
+<label>Status</label>
+<input 
+    type="text" 
+    placeholder="Teste"
+    name="status"
+    [(ngModel)]="product.status"
 />
 
 <button (click)="create()">Cadastrar</button>
