@@ -29,13 +29,13 @@ content-type: application/json
 ###
 
 
-POST http://localhost:1234/registerBook
+POST http://localhost:1234/product/registerBook
 content-type: application/json 
 
 {
     "bookName": "essa gente",
     "author": "buarque",
     "publisher": "cia das letras",
-    "genre": "drama",
+    "genre": "romance",
     "status": "disponivel"
 }
