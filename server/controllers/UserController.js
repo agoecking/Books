@@ -1,4 +1,4 @@
-const user = require("../models/UserSchema.js");
+const user = require("../models/UserSchema");
 
 class UserController {
   async store(req, res) {
@@ -21,7 +21,6 @@ class UserController {
 
   async get(req, res) {
     var result = await user.find({});
-    console.log(result);
     res.status(200).json(result);
   }
 }

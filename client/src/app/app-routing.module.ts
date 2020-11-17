@@ -1,29 +1,19 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
-import { CreateBookComponent } from "./views/book/create-book/create-book.component";
-import { ListBookComponent } from "./views/book/list-book/list-book.component";
+import { BookCreateComponent } from "./views/books/book-create/book-create.component";
+import { BookListComponent } from './views/books/book-list/book-list.component'
 
-import { CreateUserComponent } from "./views/user/create-user/create-user.component";
-import { ListUserComponent } from "./views/user/list-user/list-user.component";
-
+import { UserCreateComponent } from "./views/users/users-create/user-create.component";
+import{ UserListComponent} from "./views/users/users-list/user-list.component"
 const routes: Routes = [
   {
-    path: 'user',
-    component: ListUserComponent,
+    path: "user",
+    component: UserListComponent,
   },
   {
-    path: 'user/registerUser',
-    component: CreateUserComponent,
-  },
-
-  {
-    path: 'product',
-    component: ListBookComponent,
-  },
-  {
-    path: 'product/registerBook',
-    component: CreateBookComponent,
+    path: 'book',
+    component: BookListComponent,
   }
 ];
 

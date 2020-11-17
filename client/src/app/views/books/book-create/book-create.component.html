@@ -1,0 +1,41 @@
+<mat-card>
+    <mat-form-field>
+       <mat-label>Inserir Livro</mat-label>
+        <div class="campos">
+            <mat-form-field class="campo">
+                <mat-label>Nome</mat-label>
+                <input matInput name="bookName" [(ngModel)]="bookName"/>
+            </mat-form-field>
+
+            <mat-form-field class="campo">
+                <mat-label>Autor</mat-label>
+                <input matInput name="author" [(ngModel)]="author"/>
+            </mat-form-field>
+
+            <mat-form-field class="campo">
+                <mat-label>ISBN</mat-label>
+                <input matInput name="isbn" [(ngModel)]="isbn"/>
+            </mat-form-field>
+
+            <mat-form-field class="campo">
+                <mat-label>Gênero</mat-label>
+                <input matInput name="genre" [(ngModel)]="genre"/>
+            </mat-form-field>
+
+            <mat-form-field class="campo">
+                <mat-label>Editora</mat-label>
+                <input matInput name="publisher" [(ngModel)]="publisher"/>
+            </mat-form-field>
+
+            <mat-form-field class="campo" appearance="fill">
+                <mat-label>Status</mat-label>
+                <mat-select [(ngModel)]="status">
+                  <mat-option value="disponivel"> Disponivel </mat-option>
+                  <mat-option value="indisponivel"> Indisponivel </mat-option>
+                  <mat-option value="analise"> Analise </mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+    </mat-form-field>
+    <button mat-raised-button color="warn" (click)="create()">Save</button>
+</mat-card>

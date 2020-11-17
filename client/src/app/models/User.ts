@@ -1,10 +1,9 @@
-import { Address } from './Address';
+import { Address } from "./Address";
 
 export class User {
   _id?: string;
   name: string;
-  password: string;
   email: string;
+  password: string;
   address: Address[];
-  createdAt?: Date;
 }

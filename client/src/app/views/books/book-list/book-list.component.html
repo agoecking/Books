@@ -1,0 +1,17 @@
+<button (click)="navigateToCreateBook()">
+  Cadastrar livro
+</button>
+<table>
+  <tr>
+    <th>#</th>
+    <th>Livro</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let book of books">
+    <td>{{book._id}}</td>
+    <td>{{book.bookName}}</td>
+    <td>
+      <a routerLink="/book/register/{{book._id}}">Alterar</a>
+    </td>
+  </tr>
+</table>
