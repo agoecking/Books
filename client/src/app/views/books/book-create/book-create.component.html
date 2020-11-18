@@ -1,41 +1,50 @@
-<mat-card>
-    <mat-form-field>
-       <mat-label>Inserir Livro</mat-label>
-        <div class="campos">
-            <mat-form-field class="campo">
-                <mat-label>Nome</mat-label>
-                <input matInput name="bookName" [(ngModel)]="bookName"/>
-            </mat-form-field>
-
-            <mat-form-field class="campo">
-                <mat-label>Autor</mat-label>
-                <input matInput name="author" [(ngModel)]="author"/>
-            </mat-form-field>
-
-            <mat-form-field class="campo">
-                <mat-label>ISBN</mat-label>
-                <input matInput name="isbn" [(ngModel)]="isbn"/>
-            </mat-form-field>
-
-            <mat-form-field class="campo">
-                <mat-label>Gênero</mat-label>
-                <input matInput name="genre" [(ngModel)]="genre"/>
-            </mat-form-field>
-
-            <mat-form-field class="campo">
-                <mat-label>Editora</mat-label>
-                <input matInput name="publisher" [(ngModel)]="publisher"/>
-            </mat-form-field>
-
-            <mat-form-field class="campo" appearance="fill">
-                <mat-label>Status</mat-label>
-                <mat-select [(ngModel)]="status">
-                  <mat-option value="disponivel"> Disponivel </mat-option>
-                  <mat-option value="indisponivel"> Indisponivel </mat-option>
-                  <mat-option value="analise"> Analise </mat-option>
-                </mat-select>
-              </mat-form-field>
-        </div>
-    </mat-form-field>
-    <button mat-raised-button color="warn" (click)="create()">Save</button>
+<mat-card class="card">
+    <mat-card-title> Novo Livro </mat-card-title>
 </mat-card>
+  <div class="conteudo">
+    <mat-card id="nome" class="celula esquerda">
+      <mat-card-title>Insira os dados do Livro:</mat-card-title>
+      <div class="campos">
+        <mat-form-field class="campo">
+          <mat-label>Nome</mat-label>
+          <input matInput name="bookName" [(ngModel)]="book.bookName" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="campo">
+          <mat-label>Autor</mat-label>
+          <input matInput name="author" [(ngModel)]="book.author" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="campo">
+          <mat-label>ISBN</mat-label>
+          <input matInput name="isbn" [(ngModel)]="book.isbn" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="campo">
+          <mat-label>Genero</mat-label>
+          <input matInput name="genre" [(ngModel)]="book.genre" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="campo">
+          <mat-label>Editora</mat-label>
+          <input matInput name="publisher" [(ngModel)]="book.publisher" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="campo" appearance="fill">
+            <mat-label>Status</mat-label>
+            <mat-select [(ngModel)]="book.status">
+              <mat-option value="disponivel"> Disponivel </mat-option>
+              <mat-option value="indisponivel"> Indisponivel </mat-option>
+              <mat-option value="analise"> Analise </mat-option>
+            </mat-select>
+          </mat-form-field>
+      </div>
+    </mat-card>
+  </div>
+  
+  <button mat-raised-button color="warn" (click)="create()">Cadastrar</button>

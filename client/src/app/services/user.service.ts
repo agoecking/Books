@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
     providedIn: "root",
 })
 export class UserService{
-    baseURL = "http://localhost:1234";
+    baseURL = "http://localhost:1234/user";
 
     constructor(private http: HttpClient) {}
 
@@ -16,6 +16,12 @@ export class UserService{
     }
 
     create (user: User): Observable<User>{
-        return this.http.post<User>(this.baseURL, user);
+        return this.http.post<User>(this.baseURL+'/register', user);
     }
+    getByEmail (email: string): Observable<User>{
+        return this.http.get<User>(`${this.baseURL, email}`)
+    }
+    update(user: User): Observable<User>{
+        return this.http.put<User>(this.baseURL, user)
+    }  
 }

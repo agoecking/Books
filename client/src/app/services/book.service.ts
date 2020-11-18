@@ -7,16 +7,16 @@ import { Observable } from "rxjs";
     providedIn: "root",
 })
 export class BookService{
-    baseURL = "http://localhost:1234";
+    baseURL = "http://localhost:1234/book";
 
     constructor(private http: HttpClient) {}
 
     list(): Observable<Book[]>{
-        return this.http.get<Book[]>(this.baseURL+'/book');
+        return this.http.get<Book[]>(this.baseURL);
     }
 
     create (book: Book): Observable<Book>{
-        return this.http.post<Book>(this.baseURL+'/book/register', book);
+        return this.http.post<Book>(this.baseURL+'/register', book);
     }
 
     getByGenre (genre: string): Observable<Book>{

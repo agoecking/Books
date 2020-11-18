@@ -6,6 +6,4 @@ import { Component } from '@angular/core';
   styles: []
 })
 
-export class AppComponent {
-  nome = 'Diogo Steinke Deconto';
-}
+export class AppComponent {}
