@@ -1,37 +1,40 @@
-import { Component, OnInit } from "@angular/core"
-import { BookService } from "./../../../services/book.service"
-import { Book } from "./../../../models/Book"
-import { Router } from "@angular/router"
-import { MatTableDataSource } from "@angular/material/table"
+import { Component, OnInit } from "@angular/core";
+import { BookService } from "./../../../services/book.service";
+import { Book } from "./../../../models/Book";
+import { Router } from "@angular/router";
+import { MatTableDataSource } from "@angular/material/table";
 
 @Component({
-    selector: "app-book-list",
-    templateUrl: "./book-list.component.html",
-    styleUrls: [ "./book-list.component.css"]
+  selector: "app-book-list",
+  templateUrl: "./book-list.component.html",
+  styleUrls: ["./book-list.component.css"],
 })
-
 export class BookListComponent implements OnInit {
-    booksColumns: string[] = ["id", "edit", "delete"];
+  booksColumns: string[] = ["id", "bookName", "author", "edit", "delete"];
 
-    books: Book [] = [];
-    
-    bookTable: MatTableDataSource<Book> = new MatTableDataSource<Book>(this.books)
-    constructor(private router: Router, private bookService: BookService){}
+  books: Book[] = [];
 
-    ngOnInit(): void {
-        this.bookService.list().subscribe((list) => {
-            this.books = list;
-        })
-    }
+  bookTable: MatTableDataSource<Book> = new MatTableDataSource<Book>(
+    this.books
+  );
 
-    navigateToCreateBook(): void {
-        this.router.navigate(['/book/register'])
-    }
+  constructor(private router: Router, private bookService: BookService) {}
 
-    // delete(id: string): void{
-    //     this.bookService.delete(id).subscribe((lista) => {
-    //       this.books = lista;      
-    //       this.booksTable = new MatTableDataSource<Book>(this.books);
-    //     });
-    //   }
+  ngOnInit(): void {
+    this.bookService.list().subscribe((list) => {
+      this.books = list;
+      this.bookTable = new MatTableDataSource<Book>(this.books);
+    });
+  }
+
+  navigateToCreateBook(): void {
+    this.router.navigate(["/book/register"]);
+  }
+
+  delete(id: string): void {
+    this.bookService.delete(id).subscribe((list) => {
+      this.books = list;
+      this.bookTable = new MatTableDataSource<Book>(this.books);
+    });
+  }
 }

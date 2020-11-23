@@ -1,17 +1,32 @@
-<button (click)="navigateToCreateUser()">
+<button (click)="navigateToCreateUser()" mat-raised-button color="primary">
   Cadastrar Usuário
 </button>
-<table>
-  <tr>
-    <th>#</th>
-    <th>Usuario</th>
-    <th></th>
-  </tr>
-  <tr *ngFor="let user of users">
-    <td>{{user._id}}</td>
-    <td>{{user.name}}</td>
-    <td>
-      <a routerLink="/user/register/{{user._id}}">Alterar</a>
+
+<table mat-table [(dataSource)]="userTable" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>#</th>
+    <td mat-cell *matCellDef="let user">{{ user._id }}</td>
+  </ng-container>
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Nome do usuário</th>
+    <td mat-cell *matCellDef="let user">{{ user.name }}</td>
+  </ng-container>
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef>Alterar</th>
+    <td mat-cell *matCellDef="let user">
+      <a mat-raised-button color="accent" routerLink="update/{{ user._id }}">
+        <span class="material-icons"> edit </span>
+      </a>
     </td>
-  </tr>
+  </ng-container>
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef>Remover</th>
+    <td mat-cell *matCellDef="let user">
+      <button (click)="delete(user._id)" mat-raised-button color="warn">
+        <span class="material-icons"> delete </span>
+      </button>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="usersColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: usersColumns"></tr>
 </table>

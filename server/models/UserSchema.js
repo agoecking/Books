@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const addressSchema = require("./AddressSchema");
 
 const user = new mongoose.Schema({
   name: {
@@ -14,7 +13,6 @@ const user = new mongoose.Schema({
     type: String,
     required: true,
   },
-  address: [addressSchema],
 });
 
 module.exports = mongoose.model("users", user);

@@ -2,40 +2,40 @@
   margin-right: 16px;
 }
 
-table{
+table {
   width: 100%;
 }
 
-.conteudo{
+.conteudo {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 16px;
 }
 
-.esquerda{
+.esquerda {
   margin-right: 8px;
 }
-.direita{
+.direita {
   margin-left: 8px;
 }
 
-.celula{
+.celula {
   flex: 1;
   margin-bottom: 16px;
 }
 
-.campos{
+.campos {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-.campo{
+.campo {
   flex: 5;
   margin-right: 8px;
 }
-.botao{
+.botao {
   flex: 1;
   margin-left: 8px;
   display: flex;

@@ -1,17 +1,36 @@
-<button (click)="navigateToCreateBook()">
-  Cadastrar livro
+<button (click)="navigateToCreateBook()" mat-raised-button color="primary">
+  Cadastrar Livro
 </button>
-<table>
-  <tr>
-    <th>#</th>
-    <th>Livro</th>
-    <th></th>
-  </tr>
-  <tr *ngFor="let book of books">
-    <td>{{book._id}}</td>
-    <td>{{book.bookName}}</td>
-    <td>
-      <a routerLink="/book/register/{{book._id}}">Alterar</a>
+
+<table mat-table [(dataSource)]="bookTable" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>#</th>
+    <td mat-cell *matCellDef="let book">{{ book._id }}</td>
+  </ng-container>
+  <ng-container matColumnDef="bookName">
+    <th mat-header-cell *matHeaderCellDef>Nome do livro</th>
+    <td mat-cell *matCellDef="let book">{{ book.bookName }}</td>
+  </ng-container>
+  <ng-container matColumnDef="author">
+    <th mat-header-cell *matHeaderCellDef>Autor</th>
+    <td mat-cell *matCellDef="let book">{{ book.author }}</td>
+  </ng-container>
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef>Alterar</th>
+    <td mat-cell *matCellDef="let book">
+      <a mat-raised-button color="accent" routerLink="update/{{ book._id }}">
+        <span class="material-icons"> edit </span>
+      </a>
     </td>
-  </tr>
+  </ng-container>
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef>Remover</th>
+    <td mat-cell *matCellDef="let book">
+      <button (click)="delete(book._id)" mat-raised-button color="warn">
+        <span class="material-icons"> delete </span>
+      </button>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="booksColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: booksColumns"></tr>
 </table>

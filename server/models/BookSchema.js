@@ -21,6 +21,10 @@ const book = new mongoose.Schema({
     type: String,
     required: true,
   },
+  preco: {
+    type: Number,
+    required: true,
+  },
   status: {
     type: String,
     enum: ["disponivel", "indisponivel", "analise"],

@@ -1,61 +1,33 @@
 <mat-card class="card">
-    <mat-card-title> Novo Usuário </mat-card-title>
+  <mat-card-title> Novo Usuário </mat-card-title>
 </mat-card>
-  <div class="conteudo">
-    <mat-card id="nome" class="celula esquerda">
-      <mat-card-title>Insira os dados do Usuário:</mat-card-title>
-      <div class="campos">
-        <mat-form-field class="campo">
-          <mat-label>Nome</mat-label>
-          <input matInput name="name" [(ngModel)]="user.name" />
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field class="campo">
-          <mat-label>E-mail</mat-label>
-          <input matInput name="email" [(ngModel)]="user.email" />
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field class="campo">
-          <mat-label>Senha</mat-label>
-          <input matInput name="password" [(ngModel)]="user.password" />
-        </mat-form-field>
-      </div>
-    </mat-card>
-    <mat-card id="endereco" class="celula esquerda">
-      <mat-card-title>Insira os dados do endereco:</mat-card-title>
-      <div class="campos">
-        <mat-form-field class="campo">
-          <mat-label>Rua</mat-label>
-          <input matInput name="rua" [(ngModel)]="address.rua" />
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field class="campo">
-          <mat-label>Bairro</mat-label>
-          <input matInput name="bairro" [(ngModel)]="address.bairro" />
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field class="campo">
-          <mat-label>Numero</mat-label>
-          <input matInput name="numero" [(ngModel)]="address.numero" />
-        </mat-form-field>
-      </div>
-      <div>
-          <mat-form-field class="campo">
-            <mat-label>Complemento</mat-label>
-            <input matInput name="complemento" [(ngModel)]="address.complemento" />
-          </mat-form-field>
-        </div>
-        <div>
-          <mat-form-field class="campo">
-            <mat-label>CEP</mat-label>
-            <input matInput name="cep" [(ngModel)]="address.cep" />
-          </mat-form-field>
-        </div>
-    </mat-card>
-  </div>
-  
-  <button mat-raised-button color="warn" (click)="create()">Cadastrar</button>
+<div class="conteudo">
+  <mat-card id="nome" class="celula esquerda">
+    <mat-card-title>Insira os dados do Usuário:</mat-card-title>
+    <div class="campos">
+      <mat-form-field class="campo">
+        <mat-label>Nome</mat-label>
+        <input matInput name="name" [(ngModel)]="user.name" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="campo">
+        <mat-label>E-mail</mat-label>
+        <input type="email" matInput name="email" [(ngModel)]="user.email" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="campo">
+        <mat-label>Senha</mat-label>
+        <input
+          type="password"
+          matInput
+          name="password"
+          [(ngModel)]="user.password"
+        />
+      </mat-form-field>
+    </div>
+  </mat-card>
+</div>
+
+<button mat-raised-button color="warn" (click)="create()">Cadastrar</button>

@@ -26,10 +26,10 @@ export class BookCreateComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    let id = this.route.snapshot.paramMap.get("id");
-    if (id !== null) {
-      this.service.getByGenre(id).subscribe((book) => {
-        this.book = book;
+    let bookId = this.route.snapshot.paramMap.get("bookId");
+    if (bookId !== null) {
+      this.service.getById(bookId).subscribe((book) => {
+        this.loadData(book);
       });
     }
   }
@@ -40,10 +40,15 @@ export class BookCreateComponent implements OnInit {
         console.log(book);
       });
     } else {
+      console.log(this.book._id);
       this.service.update(this.book).subscribe((book) => {
         console.log(book);
       });
     }
     this.router.navigate([""]);
+  }
+
+  loadData(book: Book) {
+    this.book = book;
   }
 }
