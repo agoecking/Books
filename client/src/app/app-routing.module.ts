@@ -6,7 +6,6 @@ import { User } from "./models/User";
 import { BookCreateComponent } from "./views/books/book-create/book-create.component";
 import { BookListComponent } from "./views/books/book-list/book-list.component";
 
-
 import { UserCreateComponent } from "./views/users/users-create/user-create.component";
 import { UserListComponent } from "./views/users/users-list/user-list.component";
 const routes: Routes = [
@@ -33,17 +32,19 @@ const routes: Routes = [
   },
 
   //find book Routes
+  
   {
-    path: "book/:bookName",
-    component: BookCreateComponent,
+    path: "book/findname/:bookName",
+    component: BookListComponent,
   },
   {
-    path: "book/:author",
-    component: BookCreateComponent,
+    path: "book/findauthor/:author",
+    component: BookListComponent,
   },
   {
-    path: "book/:genre",
-    component: BookCreateComponent,
+    path: "book/findgenre/:genre",
+    component: BookListComponent,
+    
   },
 
   //user routes

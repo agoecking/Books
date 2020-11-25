@@ -32,14 +32,14 @@ export class BookService {
   }
 
   getByName(name: string): Observable<Book[]> {
-    return this.http.get<Book[]>(`${this.baseURL}/${name}`);
+    return this.http.get<Book[]>(`${this.baseURL}/findname/${name}`);
   }
 
   getByGenre(genre: string): Observable<Book[]>{
-    return this.http.get<Book[]>(`${this.baseURL}/${genre}`);
+    return this.http.get<Book[]>(`${this.baseURL}/findgenre/${genre}`);
   }
   
   getByAuthor(author: string): Observable<Book[]>{
-    return this.http.get<Book[]>(`${this.baseURL}/${author}`);
+    return this.http.get<Book[]>(`${this.baseURL}/findauthor/${author}`);
   }
 }

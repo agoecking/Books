@@ -21,11 +21,11 @@ import {MatExpansionModule} from '@angular/material/expansion';
 
 import { BookCreateComponent } from "./views/books/book-create/book-create.component";
 import { UserCreateComponent } from "./views/users/users-create/user-create.component";
-import { BookListComponent } from "./views/books/book-list/book-list.component";
 import { HeaderComponent } from "./template/header/header.component";
 import { NavComponent } from "./template/nav/nav.component";
 import { UserListComponent } from "./views/users/users-list/user-list.component";
 import { FooterComponent } from "./template/footer/footer.component";
+import { BookListComponent } from './views/books/book-list/book-list.component';
 
 @NgModule({
   declarations: [
@@ -33,10 +33,10 @@ import { FooterComponent } from "./template/footer/footer.component";
     BookCreateComponent,
     UserCreateComponent,
     HeaderComponent,
-    BookListComponent,
     NavComponent,
     UserListComponent,
     FooterComponent,
+    BookListComponent,
   ],
   imports: [
     BrowserModule,

@@ -20,8 +20,8 @@ router.delete("/book/delete/:bookId", bookControllers.delete);
 router.put("/book/update", bookControllers.update);
 
 //find book routes
-router.get("/book/:bookName", bookControllers.getByName);
-router.get("/book/:author", bookControllers.getByAuthor);
-router.get("/book/:genre", bookControllers.getByGenre);
+router.get("/book/findname/:bookName", bookControllers.getByName);
+router.get("/book/findauthor/:author", bookControllers.getByAuthor);
+router.get("/book/findgenre/:genre", bookControllers.getByGenre);
 
 module.exports = router;

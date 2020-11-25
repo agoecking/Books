@@ -37,4 +37,5 @@ export class UserListComponent implements OnInit {
       this.userTable = new MatTableDataSource<User>(this.users);
     });
   }
+  
 }

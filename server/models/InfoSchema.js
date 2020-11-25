@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const info = new mongoose.Schema({
   sector: {
     type: String,
-    enum: ["caixa", "administracao", "estoque", "finenceiro"],
+    enum: ["caixa", "administracao", "estoque", "financeiro"],
     required: true,
   },
   cpf: {
