@@ -13,6 +13,7 @@ export class BookListComponent implements OnInit {
   booksColumns: string[] = ["id", "bookName", "author", "edit", "delete"];
 
   books: Book[] = [];
+  panelOpenState = false;
 
   bookTable: MatTableDataSource<Book> = new MatTableDataSource<Book>(
     this.books

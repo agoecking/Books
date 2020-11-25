@@ -16,6 +16,8 @@ import { MatListModule } from "@angular/material/list";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatTableModule } from "@angular/material/table";
 import { MatSelectModule } from "@angular/material/select";
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 import { BookCreateComponent } from "./views/books/book-create/book-create.component";
 import { UserCreateComponent } from "./views/users/users-create/user-create.component";
@@ -52,6 +54,7 @@ import { FooterComponent } from "./template/footer/footer.component";
     MatListModule,
     MatTableModule,
     MatSelectModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent],

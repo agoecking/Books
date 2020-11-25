@@ -52,6 +52,33 @@ class BookController {
       res.status(500).json(error);
     }
   }
+
+  async getByName(req, res) {
+    try {
+      var result = await book.findOne(req.params.bookName);
+      res.status(200).json(result);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  }
+
+  async getByGenre(req, res) {
+    try {
+      var result = await book.find(req.params.genre);
+      res.status(200).json(result);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  }
+
+  async getByAuthor(req, res) {
+    try {
+      var result = await book.find(req.params.author);
+      res.status(200).json(result);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  }
 }
 
 module.exports = new BookController();

@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const infoSchema = require("./InfoSchema");
 
 const user = new mongoose.Schema({
   name: {
@@ -13,6 +14,7 @@ const user = new mongoose.Schema({
     type: String,
     required: true,
   },
+  infos: [infoSchema],
 });
 
 module.exports = mongoose.model("users", user);

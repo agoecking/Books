@@ -45,7 +45,7 @@ export class BookCreateComponent implements OnInit {
         console.log(book);
       });
     }
-    this.router.navigate([""]);
+    this.router.navigate(["/book"]);
   }
 
   loadData(book: Book) {

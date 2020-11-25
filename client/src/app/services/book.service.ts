@@ -30,4 +30,16 @@ export class BookService {
   delete(id: string): Observable<Book[]> {
     return this.http.delete<Book[]>(`${this.baseURL}` + "/delete/" + `${id}`);
   }
+
+  getByName(name: string): Observable<Book[]> {
+    return this.http.get<Book[]>(`${this.baseURL}/${name}`);
+  }
+
+  getByGenre(genre: string): Observable<Book[]>{
+    return this.http.get<Book[]>(`${this.baseURL}/${genre}`);
+  }
+  
+  getByAuthor(author: string): Observable<Book[]>{
+    return this.http.get<Book[]>(`${this.baseURL}/${author}`);
+  }
 }

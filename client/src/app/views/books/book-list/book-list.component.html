@@ -1,7 +1,3 @@
-<button (click)="navigateToCreateBook()" mat-raised-button color="primary">
-  Cadastrar Livro
-</button>
-
 <table mat-table [(dataSource)]="bookTable" class="mat-elevation-z8">
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef>#</th>
@@ -34,3 +30,7 @@
   <tr mat-header-row *matHeaderRowDef="booksColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: booksColumns"></tr>
 </table>
+<button (click)="navigateToCreateBook()" mat-raised-button color="primary">
+  Cadastrar Livro
+</button>
+
