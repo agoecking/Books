@@ -10,10 +10,11 @@ import { MatTableDataSource } from "@angular/material/table";
   styleUrls: ["./book-list.component.css"],
 })
 export class BookListComponent implements OnInit {
-  booksColumns: string[] = ["id", "bookName", "author", "edit", "delete"];
+  booksColumns: string[] = ["bookName", "author", "isbn", "genre", "publisher", "status","preco", "edit", "delete"];
 
   books: Book[] = [];
-  panelOpenState = false;
+  bookName: string;
+  
 
   bookTable: MatTableDataSource<Book> = new MatTableDataSource<Book>(
     this.books
@@ -22,35 +23,10 @@ export class BookListComponent implements OnInit {
   constructor(private router: Router, private bookService: BookService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    let bookName = this.route.snapshot.paramMap.get('bookName');
-    let genre = this.route.snapshot.paramMap.get('genre')
-    let author = this.route.snapshot.paramMap.get('author')
-    if(bookName !== null){
-      this.bookService.getByName(bookName).subscribe((book)=>{
-        console.log(bookName);
-        this.books = book;
-        this.bookTable = new MatTableDataSource<Book>(this.books);
-      })
-    }
-    else if (genre !== null) {
-      this.bookService.getByName(genre).subscribe((book)=>{
-        console.log(genre);
-        this.books = book;
-        this.bookTable = new MatTableDataSource<Book>(this.books);
-      })
-    }
-    else if(author !== null ){
-      this.bookService.getByAuthor(author).subscribe((book)=>{
-        console.log(author);
-        this.books = book;
-        this.bookTable = new MatTableDataSource<Book>(this.books);
-      })
-    }
-    else{
-    this.bookService.list().subscribe((list) => {
-      this.books = list;
-      this.bookTable = new MatTableDataSource<Book>(this.books);
-    });}
+     this.bookService.list().subscribe((list) => {
+       this.books = list;
+       this.bookTable = new MatTableDataSource<Book>(this.books);
+    })
   }
 
   navigateToCreateBook(): void {
@@ -64,19 +40,9 @@ export class BookListComponent implements OnInit {
     });
   }
 
-  getByName(name: string): void {
-    this.bookService.getByName(name).subscribe((list) => {
-      this.books = list;
-      this.bookTable = new MatTableDataSource<Book>(this.books);
-    });
+
+  public doFilter = (value: string) => {
+    this.bookTable.filter = value.trim().toLocaleLowerCase();
   }
 
-  getByGenre(genre: string): void {
-    this.bookService.getByName(genre).subscribe((list) => {
-      this.books = list;
-      console.log(list);
-      console.log(genre);
-      this.bookTable = new MatTableDataSource<Book>(this.books);
-    });
-  }
 }

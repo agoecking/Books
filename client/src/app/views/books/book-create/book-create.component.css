@@ -3,7 +3,10 @@
 }
 
 table {
-  width: 100%;
+  width: 65%;
+  overflow-x: auto;
+    overflow-y: hidden;
+    min-width: 500px;
 }
 
 .conteudo {
@@ -40,4 +43,5 @@ table {
   margin-left: 8px;
   display: flex;
   align-items: center;
+  color: #000000;
 }

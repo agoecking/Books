@@ -17,6 +17,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatTableModule } from "@angular/material/table";
 import { MatSelectModule } from "@angular/material/select";
 import {MatExpansionModule} from '@angular/material/expansion';
+import { MatPaginatorModule} from '@angular/material/paginator';
 
 
 import { BookCreateComponent } from "./views/books/book-create/book-create.component";
@@ -26,6 +27,7 @@ import { NavComponent } from "./template/nav/nav.component";
 import { UserListComponent } from "./views/users/users-list/user-list.component";
 import { FooterComponent } from "./template/footer/footer.component";
 import { BookListComponent } from './views/books/book-list/book-list.component';
+
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { BookListComponent } from './views/books/book-list/book-list.component';
     UserListComponent,
     FooterComponent,
     BookListComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,8 @@ import { BookListComponent } from './views/books/book-list/book-list.component';
     MatListModule,
     MatTableModule,
     MatSelectModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent],

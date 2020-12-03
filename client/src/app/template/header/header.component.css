@@ -1,4 +1,8 @@
 .link-navegacao {
-  color: #fff;
+  color: #000000;
   text-decoration: none;
+}
+.doidera{
+  color: black;
+  display: flex;
 }

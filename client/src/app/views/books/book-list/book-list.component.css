@@ -1,9 +1,29 @@
 mat-card {
-  width: 80%;
+  width: 100%;
   margin: auto;
 }
-
+table{
+  width: 65%;
+  overflow-x: auto;
+    overflow-y: hidden;
+    min-width: 500px;
+}
 mat-form-field,
 textarea {
   width: 100%;
+}
+.campo {
+  flex: 5;
+  margin-right: 8px;
+}
+
+
+
+.botao {
+  flex: auto;
+  size: auto;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  color: #000000;
 }

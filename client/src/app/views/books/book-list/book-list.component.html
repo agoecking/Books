@@ -1,8 +1,11 @@
-<table mat-table [(dataSource)]="bookTable" class="mat-elevation-z8">
-  <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef>#</th>
-    <td mat-cell *matCellDef="let book">{{ book._id }}</td>
-  </ng-container>
+<div class>
+  <mat-form-field class="conteudo">
+    <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Insira o filtro para pesquisar">
+  </mat-form-field>
+</div>
+
+<table mat-table [(dataSource)]="bookTable" class="mat-elevation-z8" class="mat-table">
+
   <ng-container matColumnDef="bookName">
     <th mat-header-cell *matHeaderCellDef>Nome do livro</th>
     <td mat-cell *matCellDef="let book">{{ book.bookName }}</td>
@@ -11,10 +14,30 @@
     <th mat-header-cell *matHeaderCellDef>Autor</th>
     <td mat-cell *matCellDef="let book">{{ book.author }}</td>
   </ng-container>
+  <ng-container matColumnDef="isbn">
+    <th mat-header-cell *matHeaderCellDef>ISBN</th>
+    <td mat-cell *matCellDef="let book">{{ book.isbn }}</td>
+  </ng-container>
+  <ng-container matColumnDef="genre">
+    <th mat-header-cell *matHeaderCellDef>Genero</th>
+    <td mat-cell *matCellDef="let book">{{ book.genre }}</td>
+  </ng-container>
+  <ng-container matColumnDef="publisher">
+    <th mat-header-cell *matHeaderCellDef>Editora</th>
+    <td mat-cell *matCellDef="let book">{{ book.publisher }}</td>
+  </ng-container>
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef>Status</th>
+    <td mat-cell *matCellDef="let book">{{ book.status }}</td>
+  </ng-container>
+  <ng-container matColumnDef="preco">
+    <th mat-header-cell *matHeaderCellDef>Preço</th>
+    <td mat-cell *matCellDef="let book">{{ book.preco }}</td>
+  </ng-container>
   <ng-container matColumnDef="edit">
     <th mat-header-cell *matHeaderCellDef>Alterar</th>
     <td mat-cell *matCellDef="let book">
-      <a mat-raised-button color="accent" routerLink="update/{{ book._id }}">
+      <a mat-raised-button class="botao" routerLink="update/{{ book._id }}">
         <span class="material-icons"> edit </span>
       </a>
     </td>
@@ -22,7 +45,7 @@
   <ng-container matColumnDef="delete">
     <th mat-header-cell *matHeaderCellDef>Remover</th>
     <td mat-cell *matCellDef="let book">
-      <button (click)="delete(book._id)" mat-raised-button color="warn">
+      <button (click)="delete(book._id)" mat-raised-button class= "botao">
         <span class="material-icons"> delete </span>
       </button>
     </td>
@@ -30,7 +53,3 @@
   <tr mat-header-row *matHeaderRowDef="booksColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: booksColumns"></tr>
 </table>
-<button (click)="navigateToCreateBook()" mat-raised-button color="primary">
-  Cadastrar Livro
-</button>
-

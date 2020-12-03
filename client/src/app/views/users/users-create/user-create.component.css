@@ -8,3 +8,10 @@
 table {
   width: 100%;
 }
+.botao {
+  flex: 1;
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
