@@ -1,3 +1,4 @@
+<div>
 <div class>
   <mat-form-field class="conteudo">
     <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Insira o filtro para pesquisar">
@@ -37,7 +38,7 @@
   <ng-container matColumnDef="edit">
     <th mat-header-cell *matHeaderCellDef>Alterar</th>
     <td mat-cell *matCellDef="let book">
-      <a mat-raised-button class="botao" routerLink="update/{{ book._id }}">
+      <a mat-icon-button class="botao" routerLink="update/{{ book._id }}">
         <span class="material-icons"> edit </span>
       </a>
     </td>
@@ -45,7 +46,7 @@
   <ng-container matColumnDef="delete">
     <th mat-header-cell *matHeaderCellDef>Remover</th>
     <td mat-cell *matCellDef="let book">
-      <button (click)="delete(book._id)" mat-raised-button class= "botao">
+      <button (click)="delete(book._id)" mat-icon-button class= "botao">
         <span class="material-icons"> delete </span>
       </button>
     </td>
@@ -53,3 +54,5 @@
   <tr mat-header-row *matHeaderRowDef="booksColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: booksColumns"></tr>
 </table>
+<mat-paginator class="mat-paginator" pageSize="10" showFirstLastButtons></mat-paginator>
+</div>

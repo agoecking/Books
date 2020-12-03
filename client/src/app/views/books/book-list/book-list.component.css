@@ -27,3 +27,8 @@ textarea {
   align-items: center;
   color: #000000;
 }
+
+.mat-paginator{
+  display: flex;
+  justify-content: center;
+}
